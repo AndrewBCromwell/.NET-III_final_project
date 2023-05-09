@@ -1,0 +1,81 @@
+﻿@model DataObjects.AdCampaignVM
+
+@{
+    ViewBag.Title = "Ad Campaign Details";
+}
+
+<h2>Ad Campaign Details</h2>
+
+<div>
+    <h4>Ad Campaign</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdCompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdCompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageTicketsSold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageTicketsSold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageRevenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageRevenue)
+        </dd>
+    </dl>
+
+    <h3>Ad Items</h3>
+
+    @foreach (var item in Model.AdItems)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => item.AdType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.AdType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.FocusAct)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.FocusAct)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.Cost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Cost)
+            </dd>
+        </dl>
+        <br />
+    }
+
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
